@@ -1,0 +1,101 @@
+package com.ssafy.rent.util;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ssafy.rent.model.dto.CommercialDistrict;
+import com.ssafy.rent.model.dto.EnvironmentMap;
+
+public class CommercialDistrictReader {
+    private String filePath = "res/CommercialList.csv";
+    private List<CommercialDistrict> commercialDistrictList;
+	
+	public CommercialDistrictReader() throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(this.filePath), "UTF-8"));
+        commercialDistrictList = new ArrayList<>();
+
+        String line = null;
+        boolean first = true;
+        while((line = bf.readLine()) != null) {
+        	if(first) {
+        		first = false;
+        		continue;
+        	}
+        	           
+        	//System.out.println(line);
+        	
+            String[] splited = line.split(",", -1);
+            
+            int index17;
+            
+//            try {
+//            	index17 = Integer.parseInt(splited[17]);
+//            }catch(Exception e) {
+//            	//index17 = 1;
+//            	index17 = Integer.parseInt(splited[18]);
+//            }
+//            
+          	commercialDistrictList.add(new CommercialDistrict(cut(splited[1]), cut(splited[4]), cut(splited[18]), 1, splited[24]));
+        }
+    }
+	
+	public String cut(String line) {
+		if(line.charAt(0) == '"') {
+			line = line.replaceAll("\"", "");
+		}
+        
+        return line;
+	}
+
+	/**
+	 * @return the filePath
+	 */
+	public String getFilePath() {
+		return filePath;
+	}
+
+	/**
+	 * @param filePath the filePath to set
+	 */
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
+	/**
+	 * @return the commercialDistrictList
+	 */
+	public List<CommercialDistrict> getCommercialDistrictList() {
+		return commercialDistrictList;
+	}
+
+	/**
+	 * @param commercialDistrictList the commercialDistrictList to set
+	 */
+	public void setCommercialDistrictList(List<CommercialDistrict> commercialDistrictList) {
+		this.commercialDistrictList = commercialDistrictList;
+	}
+	
+	public List<CommercialDistrict> getDongList(int code) {
+		List<CommercialDistrict> temp = new ArrayList<CommercialDistrict>();
+		
+		for(CommercialDistrict cd : commercialDistrictList) {
+			if(cd.getCode() == code) {
+				temp.add(cd);
+			}
+		}
+		
+		return temp;
+	}
+	
+	public static void main(String args[]) throws IOException {
+		CommercialDistrictReader instance = new CommercialDistrictReader();
+		
+		List<CommercialDistrict> list = instance.getCommercialDistrictList();
+		
+		System.out.println(list.get(0));
+	}
+}

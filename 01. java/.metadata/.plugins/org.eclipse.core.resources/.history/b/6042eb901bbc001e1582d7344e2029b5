@@ -1,0 +1,77 @@
+package com.ssafy.rent.model.dto;
+
+public class CommercialDistrict {
+	private String name;
+	private String section;
+	private String dong;
+	private int code;
+	public CommercialDistrict(String name, String section, String dong, int code, String address) {
+		super();
+		this.name = name;
+		this.section = section;
+		this.dong = dong;
+		this.code = code;
+		this.address = address;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * @return the section
+	 */
+	public String getSection() {
+		return section;
+	}
+	/**
+	 * @param section the section to set
+	 */
+	public void setSection(String section) {
+		this.section = section;
+	}
+	/**
+	 * @return the dong
+	 */
+	public String getDong() {
+		return dong;
+	}
+	/**
+	 * @param dong the dong to set
+	 */
+	public void setDong(String dong) {
+		this.dong = dong;
+	}
+	/**
+	 * @return the code
+	 */
+	public int getCode() {
+		return code;
+	}
+	/**
+	 * @param code the code to set
+	 */
+	public void setCode(int code) {
+		this.code = code;
+	}
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	private String address;
+}

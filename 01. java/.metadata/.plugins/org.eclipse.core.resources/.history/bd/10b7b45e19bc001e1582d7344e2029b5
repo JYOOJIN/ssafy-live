@@ -1,0 +1,5 @@
+package com.ssafy.rent.model.dto;
+
+public class CommercialDistrict {
+
+}

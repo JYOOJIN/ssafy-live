@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DieselSUV.java&apos; to &apos;java_basic/src/com.ssafy.day5.a_abstract&apos;&#x0D;&#x0A;- Original project: &apos;java_basic&apos;&#x0D;&#x0A;- Destination element: &apos;java_basic/src/com.ssafy.day5.a_abstract&apos;&#x0D;&#x0A;- Original element: &apos;com.ssafy.day5.a_abstract.DieselSUV.java&apos;" description="Copy compilation unit" destination="/src&lt;com.ssafy.day5.a_abstract" element1="/src&lt;com.ssafy.day5.a_abstract{DieselSUV.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1705622897078" units="1" version="1.0"/>
+</session>

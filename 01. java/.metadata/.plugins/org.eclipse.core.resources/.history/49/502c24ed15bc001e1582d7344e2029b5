@@ -1,0 +1,70 @@
+package com.ssafy.rent.model.dto;
+
+public class EnvironmentMap {
+	private String company;
+	private String type;
+	private String date;
+	private String content;
+	
+	public EnvironmentMap() {
+		
+	}
+	
+	public EnvironmentMap(String company, String type, String date, String content) {
+		super();
+		this.company = company;
+		this.type = type;
+		this.date = date;
+		this.content = content;
+	}
+	
+	/**
+	 * @return the company
+	 */
+	public String getCompany() {
+		return company;
+	}
+
+	/**
+	 * @param company the company to set
+	 */
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+	/**
+	 * @return the date
+	 */
+	public String getDate() {
+		return Date;
+	}
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(String date) {
+		Date = date;
+	}
+	/**
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+	/**
+	 * @param content the content to set
+	 */
+	public void setContent(String content) {
+		this.content = content;
+	}
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.AbstractCollection"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.security.KeyStore.Entry"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="com.ssafy.model.dto.Member"/>
+    <fullyQualifiedTypeName name="com.ssafy.exception.DuplicateException"/>
+    <fullyQualifiedTypeName name="com.ssafy.exception.RecordNotFoundException"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="com.ssafy.model.dto.IdComparator"/>
+    <fullyQualifiedTypeName name="com.ssafy.model.dto.GeneralMember"/>
+    <fullyQualifiedTypeName name="com.ssafy.model.dto.SpecialMember"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="com.ssafy.day9.a_parse.parser.BoxOfficeSaxParser"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.ssafy.day9.a_parse.parser.BoxOfficeDomParser"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="java.awt.Event"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.ssafy.rent.model.dto.EnvironmentMap"/>
+    <fullyQualifiedTypeName name="com.ssafy.rent.model.dto.CommercialDistrict"/>
+    <fullyQualifiedTypeName name="com.ssafy.corona.virus.VirusMgrImpl"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.ssafy.corona.virus.DuplicatedException"/>
+</qualifiedTypeNameHistroy>

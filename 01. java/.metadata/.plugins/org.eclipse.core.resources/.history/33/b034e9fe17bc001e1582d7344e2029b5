@@ -1,0 +1,37 @@
+package com.ssafy.rent.util;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ssafy.rent.model.dto.EnvironmentMap;
+
+public class EnvironmentMapCSVReader {
+    private String filePath = "res/csv";
+    private List<EnvironmentMap> environmentList;
+    private int index;
+
+    public void EnvironmentMapCSVReader() throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(this.filePath), "UTF-8"));
+        environmentList = new ArrayList<>();
+
+        String line = null;
+        while((line = bf.readLine()) != null) {
+        	line = line.substring(1);
+            line = line.substring(0, line.length()-1);
+            
+            String[] splited = line.split("\",\"", 12);
+            
+          	environmentList.add(new EnvironmentMap(splited[0], splited[3], splited[4], splited[9]));
+        }
+        this.index = 0;
+    }
+
+    //한 행을 읽음
+    public String[] nextRead(){
+        if(readCSV.size() == index){
+            return null;
+        }
+        return readCSV.get(index++);
+    }
+}

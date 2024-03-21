@@ -1,0 +1,18 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.constant.Constable"><rhs name\="java.lang.Integer"/></lhs><lhs name\="java.lang.constant.ConstantDesc"><rhs name\="java.lang.Integer"/></lhs><lhs name\="java.lang.Number"><rhs name\="java.lang.Integer"/></lhs><lhs name\="com.ssafy.corona.virus.VirusMgr"><rhs name\="com.ssafy.corona.virus.VirusMgrImpl"/></lhs><lhs name\="com.ssafy.corona.virus.VirusMgrImpl"><rhs name\="com.ssafy.corona.virus.VirusMgrImpl"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+java_comment_task_tag=255,128,0
+java_doc_default=255,255,0
+java_doc_keyword=255,128,0
+java_doc_link=128,255,255
+java_multi_line_comment=255,255,0
+java_single_line_comment=255,255,0
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+org.eclipse.jdt.ui.wizards.srcBinFoldersBinName=classes
+sourceHoverBackgroundColor=47,47,47
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
