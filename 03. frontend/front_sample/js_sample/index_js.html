@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Basic</title>
+    <!-- js 선언 -->
+    <!-- 외부 js 선언 -->
+
+    <!-- 내부 js 선언 -->
+    <script type="text/JavaScript">
+      // 브라우저가 지원되지 않는 경우 코드 실행 생략 위한 주석: 보통 잘 쓰지는 않는다
+      <!--
+      //-->
+
+      // 전역 변수
+      // 1. function 외부에 선언한 모든 변수
+      var courseName="ssafy11";
+      var classname; //변수 선언만 한 경우에는 undefined
+      title = "자바 스크립트"; // var 생략 가능
+      let userName; //(ES6)
+      const maxLength = 30; //(ES6 상수)
+      age=23;
+
+      document.write(courseName+","+typeof(courseName));
+      document.write("<p>");
+      document.write(userName+","+typeof(userName));
+      document.write("<p>");
+      document.write(age+","+typeof(age));
+      document.write("<p>");
+
+      // 지역 변수
+      // 1. 함수 내부에 선언한 변수: var 지역변수명 = 값; (반드시 var 붙여야 한다.)
+      // 함수 선언: 이름 지정 함수
+      function print(name){
+        document.write("<h1>과정명: "+courseName+","+typeof(courseName)+"</h1>");
+        document.write("<br>");
+        document.write("사용자 이름: "+userName+","+typeof(userName));
+        document.write("<br>");
+        document.write("사용자 나이: "+age+","+typeof(age));
+        document.write("<br>");
+        return name+" 이제 잠 깼나요??"
+      }
+
+      // 익명 함수 선언: 이름이 없는 함수(딱 한번만 실행함-주로 이벤트 처리시에 진행)
+      window.onload=function(){
+        //내장 함수: Window 객체가 제공하는 함수
+
+      }
+    </script>
+
+    <noscript> 브라우저를 지원하지 않는 경우 보여주기 위한 내용 입력 </noscript>
+  </head>
+  <body>
+    <!-- dom tree -->
+    <script>
+      //함수 호출
+      print();
+      var result = print("홍길동");
+      document.write("result: " + result);
+    </script>
+    <!-- js 선언 -->
+  </body>
+</html>

@@ -1,0 +1,12 @@
+package day11.binarysearch;
+
+import java.io.IOError;
+import java.io.IOException;
+
+public class BinarySearchTest {
+	
+	public static void main(String[] args) throws IOException{
+		int[] arr= {2,4,7,9,11,19,23};
+		
+ 	}
+}

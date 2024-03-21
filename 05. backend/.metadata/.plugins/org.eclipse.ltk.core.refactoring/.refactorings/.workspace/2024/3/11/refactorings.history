@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;sample_jdbc_pattern&apos; to &apos;board_jdbc&apos;&#x0D;&#x0A;- Original element: &apos;sample_jdbc_pattern&apos;&#x0D;&#x0A;- Renamed element: &apos;sample_jdbc_pattern&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;sample_jdbc_pattern&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=sample_jdbc_pattern" name="board_jdbc" references="true" stamp="1710391290290" version="1.0"/>
+</session>

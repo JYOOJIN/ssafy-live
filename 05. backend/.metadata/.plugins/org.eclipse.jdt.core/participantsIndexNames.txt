@@ -1,0 +1,57 @@
+INDEX VERSION 1.134
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\773383049.index
+\board2_jsp\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1127605676.index
+\web_sample_11\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1838414102.index
+\basic_jsp\src\main\java
+C:\SSAFY\yoojin\live\04. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\121820072.index
+\sample_web\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\849077379.index
+\board1_servlet_answer\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1699169763.index
+\board4_cookie_session\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4118648059.index
+\board5_el_jstl\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2263856834.index
+\board3_mvc\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3281085122.index
+\board2_jsp\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3301225498.index
+\board2_jsp_sol\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\628988179.index
+\board2_jsp_sol\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4244226338.index
+\board3_mvc\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4089306671.index
+\board3_mvc\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2101417893.index
+\board5_el_jstl\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2389881385.index
+\board1_servlet_Answer\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2292480961.index
+\board1_servlet_CR_sol\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3323655668.index
+\board2_jsp\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3457363399.index
+\web_sample_11\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\121820072.index
+\sample_web\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3140491256.index
+\board1_servlet_CR_sol\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\972541221.index
+\board4_cookie_session\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\940322245.index
+\board1_servlet\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\827933315.index
+\board5_el_jstl\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2882397241.index
+\board5_el_jstl\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2860350571.index
+\board2_jsp_sol\src\main\java
+C:\SSAFY\workspace\04.backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\121820072.index
+\sample_web\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\484860463.index
+\board4_cookie_session\src\main\java
+C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2797676914.index
+\board4_cookie_session\src\main\java

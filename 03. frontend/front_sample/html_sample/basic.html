@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본</title>
+    <!-- css style -->
+    <link rel="stylesheet" href="common.css">
+
+
+    <!-- javascript -->
+    <script src="common.js"></script>
+
+
+
+</head>
+<body>
+
+    <!--
+        자식: >  (ex) div > div /table > tr > th*5 )
+        형제: +  
+        부모: ^
+        여러개: *
+        그룹: ()        
+        문자열: {문자열}
+        자동 넘버링: {$}*, {$$$}*, {$$@시작숫자}*
+        dummy text: p>lorem, p>lorem4
+     -->
+    
+     <!-- table>tr>td*5 -->
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!-- table>(tr>td*5)*4 -->
+
+    <!-- 순서없는 항목 5개 -->
+    <!-- ul>li*5 -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- ul>li{항목$$$}*5 -->
+    <ul>
+        <li>항목001</li>
+        <li>항목002</li>
+        <li>항목003</li>
+        <li>항목004</li>
+        <li>항목005</li>
+    </ul>
+
+    <!-- dummy text -->
+    <!-- p>lorem -->
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nostrum delectus nemo, maxime provident ea, dolores nihil qui soluta laborum sequi id nesciunt excepturi ex, doloremque exercitationem inventore quidem accusantium.</p>
+
+    <!-- p>lorem5 -->
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <!-- p>lorem3 -->
+    <p>Lorem, ipsum dolor.</p>
+
+    <!-- p>lorem3*5 -->
+    <p><span>Lorem, ipsum dolor.</span><span>Sequi, obcaecati sint.</span><span>Ut, odio dolorum.</span><span>Autem, neque hic?</span><span>Laborum, neque quos.</span></p>
+
+    <!-- css id: tag#id-->
+    <!-- div#container -->
+    <div id="container"></div>
+
+    <!-- css class: tag.class -->
+    <!-- div.common -->
+    <div class="common"></div>
+
+    <!-- css class 다중 지정: tag.class1.class2 -->
+    <!-- div#item_box>div.item.item${$}*10 -->
+    <div id="item_box">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+        <div class="item item10">10</div>
+    </div>
+
+    <div id="item_box">
+        <div class="common item1">1</div>
+        <div class="common item2">2</div>
+        <div class="common item3">3</div>
+        <div class="common item4">4</div>
+        <div class="common item5">5</div>
+        <div class="common item6">6</div>
+        <div class="common item7">7</div>
+        <div class="common item8">8</div>
+        <div class="common item9">9</div>
+        <div class="common item10">10</div>
+    </div>
+
+
+</body>
+</html>

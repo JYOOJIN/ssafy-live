@@ -1,0 +1,22 @@
+package day18.dp;
+
+import java.util.Scanner;
+
+//화폐단위 1,4,6
+public class MinCoinTest {
+	
+	public static void main(String[] args) { 
+			
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(); //목표금액
+		int[] D=new int[n+1]; //각 금액을 만드는 최소 동전수(최적해)
+		
+		D[0]=0; //점화식으로 값을 구할 수 없는 대상 초기화!!
+		for(int i=1;i<=n;i++) { //i: 금액
+			int min= D[i-1]
+		}
+	
+			
+	}
+
+}

@@ -1,0 +1,100 @@
+select @@autocommit; -- 현재의 autocommit 속성을 확인한다.
+
+set autocommit=false; -- 만약 위의 조회 결과가 1 즉 true 이면 false 로 변경 후 처리한다.
+use dbtest;
+
+create table tc_test
+(
+	val varchar(10)
+);
+
+start transaction;
+
+insert into tc_test
+values ('a');
+
+insert into tc_test
+values ('b');
+
+insert into tc_test
+values ('c');
+
+select * from tc_test;
+
+rollback;
+
+select *
+from tc_test;
+
+start transaction;
+
+insert into tc_test
+values ('a');
+
+insert into tc_test
+values ('b');
+
+insert into tc_test
+values ('c');
+
+commit;
+
+select @@transaction_isolation;
+
+select *
+from tc_test;
+
+truncate tc_test;
+
+start transaction;
+
+insert into tc_test
+values ('a');
+
+insert into tc_test
+values ('b');
+
+insert into tc_test
+values ('c');
+
+savepoint f1;
+
+insert into tc_test
+values ('d');
+
+insert into tc_test
+values ('e');
+
+insert into tc_test
+values ('f');
+
+select *
+from tc_test;
+
+rollback to f1;
+
+commit;
+
+insert into tc_test
+values ('d');
+
+insert into tc_test
+values ('e');
+
+insert into tc_test
+values ('f');
+
+rollback;
+
+select *
+from tc_test;
+
+drop table tc_test;
+
+select version();
+
+commit;
+
+select * from ssafy_member
+where userid="jeong";
+

@@ -1,0 +1,36 @@
+package com.ssafy.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import com.ssafy.board.dao.BoardDaoImpl;
+import com.ssafy.board.model.BoardDto;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+
+public class BoardListServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List<BoardDto> list = BoardDaoImpl.getInstance().listArticle();
+		
+		if (!list.isEmpty()) {
+			// 성공 응답
+			// 응답을 위한 정보 설정
+			request.setAttribute("", list);
+		} else {
+			// 실패 응답
+			// 
+		}
+		
+		
+		
+		
+	}
+
+}

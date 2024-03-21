@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 부가정보 설정 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ssafy11</title>
+</head>
+
+<!-- 브라우저에서 보여지는 부분 -->
+<body>
+    <!-- img -->
+    <!-- title: 풍선 도움말/alt: 액박뜰때 설명문 -->
+    <a href="https://www.ssafy.com/ksp/jsp/swp/swpMain.jsp"><img src="ssafy_logo.png" alt="ssafy logo image" title="go ssafy home" width="150px" height="80px"></a>
+
+    <!-- 링크이동 태그 -->
+    <!-- contents: 이미지/텍스트 가능 -->
+    <!-- taget="_blank" : 새탭(새창)에서 열기 -->
+    <a href="https://www.ssafy.com/ksp/jsp/swp/swpMain.jsp" target="_blank">ssafy home 링크 </a>
+
+    <!-- 수평선 -->
+    <hr>
+
+
+    <!-- 태그 종류 구분 
+    1. 블럭태그 (block tag)
+        - 자동으로 라인 이동
+        - height, width, margin 등 설정 가능
+        - java: System.out.println("hello"); 와 같음
+        - <p> body content </p>, <div> contents </div>, <h1> 제목1~제목6 </h1>
+        
+    2. 인라인태그 (inline tag)
+        - 라인 이동이 발생하지 않음
+        - 해당 contents 만큼 영역 사용
+        - <input>, <img>, <a>, <span>
+    -->
+
+    <!-- Emmet: html tag 자동 완성, vscode 기본 내장
+        자식: >
+        형제: +
+        부모: ^
+        여러개: *
+        그룹핑: ()
+        문자열: {text}
+        자동 넘버링: {$}*5, {$$$}*5, {$$$@시작숫자}*5
+        dummy text: div>lorem, div>lorem5
+    -->
+
+    <!-- table 표 만들기
+        <table border="" width="" height="">
+            <caption>테이블 제목</caption>
+
+            <thead>...</thead>
+            <tbody>...</tbody>
+            
+            <tr> : 행
+                <th>해당 행의 cell: 굵은 글씨+가운데 정렬</th>
+                <td colspan="열 병합갯수" rowspan="행 병합갯수">해당 행의 cell: 일반 글씨+왼쪽 정렬</td>
+            </tr>
+        </table>
+    -->
+
+    <!-- 실습: 주문서(4행 3열) -->
+    <!-- tag의 속성을 대체 -> CSS 대체 권장 (html과 css 분리 설계 - 유지보수,표준화) -->
+
+    <!-- %: 브라우저 크기 비율/px: 고정크기 -->
+    <table border="1px" width="80%" height="50%">
+        <!-- 제목 -->
+        <caption>주문서</caption>
+        
+        <!-- 제목행: 주문번호, 상품명, 가격 -->
+        <thead>
+            <tr bgcolor="LimeGreen">
+                <th>주문번호</th>
+                <th>상품명</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+
+        <!-- 주문서 본문 행 -->
+        <!-- tbody>(tr>td*3)*3 -->
+        <tbody bgcolor="LightGreen">
+            <tr>
+                <td align="center">1</td>
+                <td>노트북</td>
+                <td>3,500,000</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>핸드폰</td>
+                <td>1,500,000</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td>책상</td>
+                <td>500,000</td>
+            </tr>
+        </tbody>
+
+        <!-- 주문 총액 행 -->
+        <tfoot>
+            <tr>
+                <th colspan="2" bgcolor="MediumSpringGreen" >주문총액</th>
+                <td>5,500,000</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- 입력양식 -->
+    
+
+
+</body>
+</html>

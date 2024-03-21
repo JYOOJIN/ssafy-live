@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 우선순위</title>
+    <!-- 우선순위 낮은 -> 높은
+        
+        1. 웹 브라우저 기본값 
+        2. 외부 스타일 시트 
+        3. 내부 스타일 시트 
+        4. 인라인 스타일 시트 (권장 X)
+        5. !important : 강제 우선 순위 높임(권장 X)
+        0. 앞에서 선언한 순서대로 뒤에서 변경하면 뒤 선언이 우선 순위 높음
+     -->
+
+     <!-- 1. 내부 CSS 선언 -->
+     <style type="text/css">
+        /* css 선언 형식
+            선택자 - selector { proporty-name:value; property-name2:value2 } 
+            ----------------------------------------------------------------
+            선택자 - selector { 
+                proporty-name:value; 
+                property-name2:value2 
+            } 
+            ----------------------------------------------------------------
+            선택자 - selector {proporty-name:value;}
+            선택자 - selector {proporty-name2:value2;}
+        */
+        
+        /* step1 */
+        div.box1{
+            color:red;
+            
+        }
+
+     </style>
+
+     <!-- 2. 외부 import + 내부 선언 -->
+     <style type="text/css">
+        /* 외부 import 주의사항: 첫째줄 선언, 종료시에 ; 표시 필수 */
+        @import url("css1.css");
+        div.box1{
+            color:orange;
+        }
+     </style>
+
+     <!-- 3. 외부 link -->
+     <link rel="stylesheet" href="css2.css" type="text/css">
+
+</head>
+<body>
+    <div>CSS 우선순위</div>
+    <!-- 4. tag 인라인 스타일 -->
+    <!-- div#container>div>lorem7+div.box1>lorem4+div.box1>lorem10 -->
+    <div id="container">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+            <div class="box1">
+                Lorem ipsum dolor sit.
+                <div class="box1" style="color:magenta;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, mollitia?</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

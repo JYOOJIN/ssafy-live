@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 입력양식 
+
+        method='http-요청 방식 지정'
+        action='cgi=url'
+
+        # http 요청방식
+        - get 방식
+            : 기본, 미지정(생략), get 지정, url 직접입력, <a href>, location.href=""
+            : 요청 url?key=value & key=value]
+            : 길이 제한 있음, 보안 취약(사용자 보기 가능)
+            : 검색어, 즐겨찾기
+
+        - post 방식
+            : <form method="post"> 명시적 지정
+            : body + 사용지 입력 데이터
+            : 길이 제한 없음, 사용자가 볼 수 없음
+            : 보안 데이터 전송(로그인, 회원 가입 등)
+
+        # 입력양식 항목: <input type="xxxx">, <select><option></option></select>, <textarea></textarea>
+        - input tpye="xxx"
+            > text: 한줄 텍스트(이름, 아이디)
+            > password: 한줄 텍스트(입력시에 *문자 대체처리): 비밀번호, 카드번호, 휴대폰번호
+            > checkbox: 다중 선택(value="선택 전달값" checked="checked")
+            > radio: 단일 선택(value="선택 전달값" checked="checked")
+            > hidden: 개발자가 임의로 입력한 숨김 데이터(value="숨김 전달값")
+            
+            > submit: 입력양식 action 요청 전용 버튼(value="버튼 레이블명")
+            > reset: 입력양식 초기화 전용 버튼(value="버튼 레이블명")
+
+            > button: 임의의 버튼(value="버튼 레이블명"), Javascript 이벤트 처리
+            
+            > file: 파일 업로드시에 윈도우 탐색기(파일 선택)
+        
+        - <select><option></option></select>
+            > checkbox(다중 선택: multiple="multiple") + radio(단일 선택)
+            > <select multiple="multiple" size="목록 크기">
+                <option value="none">==전화번호 선택==</option>
+                <option selected="selected">010</option>
+                <option value="02">02(서울)</option>
+                <option value="062">062(광주)</option>
+                <option value="userInput">직접 입력</option>
+            </select>
+        
+        - <textarea cols="col 크기 rows="row 크기"> default-value </textarea>
+            > 여러줄 텍스트
+
+            <textarea></textarea>
+
+            <textarea>
+            </textarea>
+
+
+            
+        # 입력양식 항목 속성: 필수, 선택 
+        name="변수명-unique"
+        id="dom-unique"
+        value="기본값 | 버튼 레이블명"
+
+        required="required"
+        readOnly="readOnly"
+        autofocus="autofocus"
+        placeholder="입력 항목에 대한 도움말-입력시에 사라짐"
+    -->
+
+    <!-- get: http://127.0.0.1:5500/front_sample/main.html?userid=user01&userpw=password01 -->
+    <!--  -->
+    <form action="main.html" method="get">
+
+        <fieldset>
+            <legend>로그인 입력</legend>
+        <!-- 아이디 -->
+        <div>
+            아이디: <input type="text" name="userid" id="userid" 
+            placeholder="아이디를 입력하세요" autofocus="autofocus" required="required">
+        </div>
+
+        <!-- 비밀번호 -->
+        <!-- id는 프런트에서, name은 서버에 전송할때 request 할때 사용 -->
+        <div>
+        비밀번호: <input type="password" name="userpw" id="uesrpw" 
+        placeholder="비밀번호를 입력하세요" required="required">
+        </div>
+        </fieldset>
+
+        <fieldset>
+            
+        <!-- 로그인 요청 전용 버튼 -->
+        <div>
+        <input type="submit" value="로그인">
+        </div>
+        </fieldset>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+package com.ssafy.basic;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+
+//implements servlet이 원칙이긴하지만 그러면 method를 다 override 해주는게 불편하다
+public class HelloSsafy extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public HelloSsafy() {
+        super();
+    }
+
+
+    //요청: request, 응답: response
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter out= response.getWriter();
+		
+		
+	}
+	
+
+}

@@ -1,0 +1,10 @@
+package day7.tree;
+
+public class CompletBinaryTreeTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

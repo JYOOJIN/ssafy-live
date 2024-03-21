@@ -1,0 +1,18 @@
+package day18.dp;
+
+public class FibonacciTest {
+	
+	static int callCnt1,callCnt2;
+	
+	static long fibo1(int n) {
+		callCnt1++;
+		if(n<2) return n;
+		return fibo1(n-1)+fibo1(n-2);
+	}
+	
+
+	public static void main(String[] args) {
+		 Scanner sc=new 
+	}
+
+}

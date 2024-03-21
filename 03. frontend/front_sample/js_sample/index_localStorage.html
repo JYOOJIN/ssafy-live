@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 저장소: localStorage/sessionStorage</title>
+    <script>
+      //웹 저장소: localStorage
+      //1. 저장하기
+      localStorage.setItem("regionname", "광주");
+      localStorage.username = "정유진";
+      //localStorage.course-name="ssafy11기"; // 오류: - 이름 사용 불가
+      localStorage["course-name"] = "ssafy11기"; // - 이름 사용시에는 ["변수-이름"]
+
+      //2. 가져오기(조회)
+      let regionname = localStorage.getItem("regionname");
+      let username = localStorage.getItem("username");
+      let coursename = localStorage.getItem("course-name");
+
+      console.log(regionname, username, coursename);
+
+      //3. 삭제하기
+      //localStorage.removeItem("course-name");
+
+      //4. key 조회하기: 첫번째 등록한 key 조회
+      //console.log(localStorage.key(0));
+
+      //5. 등록된 key 개수 조회
+      //console.log(localStorage.length);
+
+      //6. 로컬저장소 초기화
+      //localStorage.clear();
+    </script>
+  </head>
+  <body>
+    <h2>웹 저장소: localStorage/sessionStorage</h2>
+  </body>
+</html>

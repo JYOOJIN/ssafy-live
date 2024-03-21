@@ -1,0 +1,101 @@
+package day15.MST;
+
+import java.io.*;
+import java.util.*;
+
+public class MST_Test {
+	
+	static class Edge implements Comparable<Edge>{
+		int from,to,weight;
+
+		public Edge(int from, int to, int weight) {
+			super();
+			this.from = from;
+			this.to = to;
+			this.weight = weight;
+		}
+
+		@Override
+		public int compareTo(Edge o) {
+			return Integer.compare(this.weight,o.weight); //오름차순
+		}
+		
+	}
+
+	static int V;
+	static Edge[] edgeList;
+	static int[] parents;
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st=new StringTokenizer(br.readLine());
+		
+		V=Integer.parseInt(st.nextToken()); //정점의 수
+		int E=Integer.parseInt(st.nextToken()); //간선의 수
+		edgeList=new Edge[E]; //간선 리스트
+		
+		for(int i=0;i<E;i++) { //간선 리스트에 값 입력받기
+			st=new StringTokenizer(br.readLine());
+			int from=Integer.parseInt(st.nextToken()); 
+			int to=Integer.parseInt(st.nextToken()); 
+			int weight=Integer.parseInt(st.nextToken()); 
+			
+			edgeList[i]=new Edge(from,to,weight); //무향 그래프지만 간선 리스트이기에 from/to 반전 필요 없다
+		}
+		
+		//전처리: 간선리스트 오름차순 정렬
+		Arrays.sort(edgeList);
+		
+		parents=new int[V]; //자신의 부모나 루트를 담는 배열(경로 압축으로 인해)
+		
+		//1. make-set
+		make();
+		
+		//2. 정렬된 간선 하나씩 꺼내어 신장트리 생성
+		for(Edge edge:edgeList) {
+			
+		}
+		
+
+	}
+	
+	public static void make() {
+		for(int i=0;i<V;i++) {
+			parents[i]=i; //모든 정점을 자신의 루트(대표자)로 설정
+		}
+	}
+	
+	public static int find(int a) { //a가 속한 트리의 루트 찾기
+		if(a==parents[a]) return a;
+		
+		return parents[a]=find(parents[a]); //경로 압축
+		
+	}
+	
+	public static void union() {
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

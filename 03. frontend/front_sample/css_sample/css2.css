@@ -1,0 +1,9 @@
+/* 파일 이름: css2.css */
+div.box1{
+    /* color:green; */
+    color:pink !important;
+    /* 브라우저 기본 폰크 크기: 16px */
+    font-size: 2em;
+
+}
+

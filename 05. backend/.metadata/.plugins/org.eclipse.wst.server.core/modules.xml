@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:board1_servlet" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:board3_mvc" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:basic_servlet" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:board1_servlet_Answer" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:board2_jsp" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:basic_jsp" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:board1_servlet_answer" serverId="Tomcat v10.1 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:board4_cookie_session" serverId="Tomcat v10.1 Server at localhost"/>
+</modules>
