@@ -140,7 +140,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\board5_el_jstl" path="/board5_el_jstl" reloadable="true" source="org.eclipse.jst.jee.server:board5_el_jstl"/></Host>
+      <Context docBase="C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\board5_el_jstl" path="/board5_el_jstl" reloadable="true" source="org.eclipse.jst.jee.server:board5_el_jstl"/><Context docBase="C:\SSAFY\yoojin\live\05. backend\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\board4_cookie_session" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:board4_cookie_session"/></Host>
     </Engine>
   </Service>
 </Server>
