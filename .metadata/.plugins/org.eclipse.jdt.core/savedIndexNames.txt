@@ -1,5 +1,2 @@
 INDEX VERSION 1.134+C:\SSAFY\yoojin\live\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-842993567.index
-3009054434.index
-3415546325.index
