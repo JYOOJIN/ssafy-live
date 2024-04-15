@@ -9,5 +9,18 @@
 		<property name="username" value="ssafy"/>
 		<property name="password" value="ssafy"/>
 	</bean>
+	
+	<bean id="dbutil" class="com.ssafy.util.DBUtil"/>
 
+	<!-- dataSource, dbUtil -->
+	<bean id="boardDao" class="com.ssafy.board.dao.BoardImpl">
+		<constructor-arg ref="dataSource"/>
+		<constructor-arg ref="dbUtil"/>
+	</bean>
+	
+	<bean id="boardService" class="com.ssafy.board.model/sercie">
+		<constructor-arg ref="boardDao"/>
+	</bean>
+
+	<bean id="boardController" class="com.ssafy.board.controller.BoardCpontroller"></bean>
 </beans>

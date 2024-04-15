@@ -10,12 +10,19 @@ import com.ssafy.util.SizeConstant;
 public class BoardServiceImpl implements BoardService {
 	
 	private BoardDao boardDao;
+	
+	public BoardServiceImpl(BoardDao boardDao) {
+		this.boardDao=boardDao;
+	}
 
 	@Override
 	public int writeArticle(BoardDto boardDto) throws Exception {
 		return boardDao.writeArticle(boardDto);
 	}
-
+	
+	
+	
+	
 	@Override
 	public List<BoardDto> listArticle(Map<String, String> map) throws Exception {
 		int pgNo = Integer.parseInt(map.get("pgno"));
