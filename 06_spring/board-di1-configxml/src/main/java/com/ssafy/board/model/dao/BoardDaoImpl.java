@@ -18,6 +18,11 @@ public class BoardDaoImpl implements BoardDao {
 	private DataSource dataSource;
 	private DBUtil dbUtil;
 	
+	public BoardDaoImpl(DataSource dataSource, DBUtil dbUtil) {
+		this.dataSource = dataSource;
+		this.dbUtil = dbUtil;
+	}
+	
 	@Override
 	public int writeArticle(BoardDto boardDto) throws SQLException {
 		int cnt = 0;
