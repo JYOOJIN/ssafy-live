@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>hellomvc_xml</display-name>
+	
+	<!-- ServletContext 초기 Parameter 설정: spring spec -->
+	<!-- root-context.xml : 비 웹 관련된 설정 파일 -->
+	<!-- root context -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- 사용자가 필요시에 추가기능 -->
+	<context-param>
+		<param-name>ssafyTitle</param-name>
+		<param-value>welcome ssafy 11</param-value>
+	</context-param>
+	
+	<!-- spring f/w : 서버 구동시(어플리케이션 시작시에) 자동 실행 초기화 진행 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- servlet 설정 -->
+	<!-- spring f/w -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
+		<!-- spring f/w : DispatcherServlet이 요청을 제어하기 위한 웹관련 설정 -->
+		<init-param> <!-- parameter 설정 -->
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- /로 들어온 애들은 servlet 거쳐간다 -->
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 시작 페이지 설정 -->
+	<!-- jsp 직접 언급은 권장 X. 모든 요청은 controller 통해서. -->
+<!-- 	<welcome-file-list>
+		<welcome-file>/WEB-INF/views/iondex.jsp</welcome-file>
+	</welcome-file-list> -->
+	
+</web-app>
