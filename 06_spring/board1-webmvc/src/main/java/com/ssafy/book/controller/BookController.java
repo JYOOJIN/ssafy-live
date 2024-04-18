@@ -58,7 +58,6 @@ public class BookController {
 	@PostMapping("/write")
 	public String write(BookDto bookDto, HttpSession session, RedirectAttributes redirectAttributes) throws Exception {
 		
-		bookService.regist(bookDto);
 		
 		return "redirect:/book/list";
 	}

@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+//controller에서 발생하는 exception만 처리 가능!!!
+//service나 dao에서 발생하는 예외는 X
 @ControllerAdvice
 public class ExceptionControllerAdvice {
 
 	private final Logger logger = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
 
+	//전역 exceptionHanlder
 	@ExceptionHandler(Exception.class)
 	public String handleException(Exception ex, Model model) {
 		logger.error("Exception 발생 : {}", ex.getMessage());
