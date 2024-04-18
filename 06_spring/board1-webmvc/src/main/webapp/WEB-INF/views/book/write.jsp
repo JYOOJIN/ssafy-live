@@ -86,7 +86,6 @@
       document.querySelector("#btn-register").addEventListener("click", function () {
     	  
     	
-    	  
         if (!document.querySelector("#subject").value) {
           alert("제목 입력!!");
           return;

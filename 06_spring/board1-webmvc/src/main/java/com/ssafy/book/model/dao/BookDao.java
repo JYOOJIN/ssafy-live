@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import com.ssafy.board.model.BoardDto;
+import com.ssafy.book.model.BookDto;
 
 public interface BookDao {
-	void writeArticle(BoardDto boardDto) throws SQLException;
-	List<BoardDto> listArticle(Map<String, Object> param) throws SQLException;
-	BoardDto getArticle(int articleNo) throws SQLException;
+	void registBook(BookDto bookDto) throws SQLException;
+	List<BookDto> listBook(Map<String, String> map) throws SQLException;
+	BookDto getBook(String isbn) throws SQLException;
 }

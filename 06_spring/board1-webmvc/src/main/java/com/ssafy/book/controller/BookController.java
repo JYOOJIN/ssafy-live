@@ -18,11 +18,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ssafy.board.controller.BoardController;
 import com.ssafy.board.model.BoardDto;
+import com.ssafy.board.model.service.BoardService;
 import com.ssafy.util.PageNavigation;
 
 import jakarta.servlet.http.HttpSession;
 
 import com.ssafy.book.model.BookDto;
+import com.ssafy.book.model.dao.BookDao;
 import com.ssafy.member.model.MemberDto;
 
 @Controller
@@ -30,20 +32,21 @@ import com.ssafy.member.model.MemberDto;
 public class BookController {
 	
 	private final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private BookDao bookDao;
+	
+	public BookController(BookDao bookDao) {
+		super();
+		this.bookDao= bookDao;
+	}
 	
 	@GetMapping("/list")
 	public ModelAndView list(@RequestParam Map<String, String> map) throws Exception {
 		//logger.debug("list parameter pgno : {}", map.get("pgno"));
 		ModelAndView mav = new ModelAndView();
 		
-		List<BookDto> books=new ArrayList<>();
-		
-		books.add(new BookDto("111-222-3333", "홍길동", "책제목1", 10000, "좋은 책 1", "abc1.png"));
-		books.add(new BookDto("111-222-4444", "임꺽정", "책제목2", 20000, "좋은 책 2", "abc2.png"));
-		books.add(new BookDto("111-333-4444", "장길산", "책제목3", 30000, "좋은 책 3", "abc3.png"));
-		
-		
+		List<BookDto> books=bookDao.listBook(map);
 		mav.addObject("books",books);
+		mav.setViewName("book/list");
 		
 		return mav;
 
@@ -58,6 +61,7 @@ public class BookController {
 	@PostMapping("/write")
 	public String write(BookDto bookDto, HttpSession session, RedirectAttributes redirectAttributes) throws Exception {
 		
+		bookDao.registBook(bookDto);
 		
 		return "redirect:/book/list";
 	}
