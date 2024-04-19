@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 여기다가 SQL 문 작성 -->
+<!-- id가 겹칠 수 있으므로 mapper마다 name을 지정해준다. 경로+인터페이스 이름 -->
+<!-- namespace unique : package-name.dao=interface-name -->
+<mapper namespace="com.ssafy.mybatis.model.dao.MemberDao">
+
+
+	<!-- table column name mapping domain dto class property-name
+		typealias: memberDto
+		resultMap="member" -->
+	<resultMap type="memberDto" id="user">
+		<result column="user_id" property="userId"/>
+		<result column="user_name" property="userName"/>
+		<result column="user_password" property="userPwd"/>
+		<result column="emial_id" property="emailId"/>
+		<result column="email_domain" property="emailDomain"/>
+		<result column="join_date" property="joinDate"/>
+	</resultMap>
+
+
+	<!-- parameterType에서 config에서 설정한 alias 사용한다. -->
+	<!-- 받은 parameterType 넣어준다 -->
+	<!-- #{property-name}는 get -->
+	<insert id="joinMember" parameterType="memberDto">
+		insert into members (user_id,user_name,user_password,email_id,email_domain,join_date) 
+		values (#{userId},#{userName},#{userPwd},#{emailId},#{emailDomain},now()) <!-- properties 넣기 -->
+	</insert>
+	
+	<!-- 전체 select는 받는 파라미터는 없지만 결과는 ResultSet이다 -->
+	<!-- selectOne, selectList가 존재. selectList에서 meberDto를 list에 넣어준다 -->
+	<!-- 따라서,나는 result는 memberDto로 받고 그거는 selectList에서 list에 넣어 줄 것이다. -->
+	<!-- 넘겨받은 것 있다면 parameterType 설정해주기 -->
+	<!-- dto의 properties를 alias로 설정하기. 이래야 set 설정 할 수 있음 -->
+	
+	<!-- resultMap 미 설정시에는 * 쓰면 null 값만 나온다 -->
+ 	<select id="listMember" resultType="memberDto">
+		select user_id userId,user_name userName,user_password userPwd,email_id emailId,email_domain emailDomain,join_date joinDate
+		from members
+	</select> 
+	
+	<!-- resultMap 설정하고 사용하면 번거로운것을 제외하고 * 로 쓸수 있다. -->
+	<select id="listMember" resultMap="user">
+		select *
+		from members
+	</select>
+</mapper>
+
