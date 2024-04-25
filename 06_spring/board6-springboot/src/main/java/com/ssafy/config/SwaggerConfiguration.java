@@ -12,6 +12,18 @@ import io.swagger.v3.oas.models.info.Info;
 //Swagger-UI 확인
 //http://localhost/swagger-ui.html
 
+//@OpenAPIDefinition(
+//	    info = @Info(
+//	        title = "SSAFY Board API 명세서",
+//	        description = "<h3>SSAFY API Reference for Developers</h3>Swagger를 이용한 Board API<br><img src=\"/assets/img/ssafy_logo.png\" width=\"150\">",
+//	        version = "v1",
+//	        contact = @Contact(
+//	            name = "hissam",
+//	            email = "hissam@ssafy.com",
+//	            url = "http://edu.ssafy.com"
+//	        )
+//	    )
+//	)
 
 @Configuration
 public class SwaggerConfiguration {
@@ -34,6 +46,11 @@ public class SwaggerConfiguration {
 	@Bean
 	public GroupedOpenApi adminApi() {
 		return GroupedOpenApi.builder().group("ssafy-user").pathsToMatch("/user/**").build();
+	}
+	
+	@Bean
+	public GroupedOpenApi fileApi() {
+		return GroupedOpenApi.builder().group("ssafy-file").pathsToMatch("/file/**").build();
 	}
 
 }

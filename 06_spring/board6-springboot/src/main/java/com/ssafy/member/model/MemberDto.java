@@ -2,9 +2,10 @@ package com.ssafy.member.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
+@Schema(title = "MemberDto (회원정보)", description = "회원의 아이디, 비번, 이름을 가진 Domain Class")
 public class MemberDto {
 
-	
+	@Schema(description = "회원아이디", requiredMode = Schema.RequiredMode.REQUIRED, example = "hissam")
 	private String userId;
 	@Schema(description = "회원이름", example = "하이쌤")
 	private String userName;

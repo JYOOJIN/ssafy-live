@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,12 +14,14 @@ import com.ssafy.board.model.mapper.BoardMapper;
 import com.ssafy.util.PageNavigation;
 import com.ssafy.util.SizeConstant;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BoardServiceImpl implements BoardService {
 	
-	private BoardMapper boardMapper;
+	private final BoardMapper boardMapper;
 
-	@Autowired
 	public BoardServiceImpl(BoardMapper boardMapper) {
 		super();
 		this.boardMapper = boardMapper;
@@ -29,9 +30,9 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	@Transactional
 	public void writeArticle(BoardDto boardDto) throws Exception {
-		System.out.println("글입력 전 dto : " + boardDto);
+		log.debug("글입력 전 dto : {}", boardDto);
 		boardMapper.writeArticle(boardDto);
-		System.out.println("글입력 후 dto : " + boardDto);
+		log.debug("글입력 후 dto : {}", boardDto);
 		List<FileInfoDto> fileInfos = boardDto.getFileInfos();
 		if (fileInfos != null && !fileInfos.isEmpty()) {
 			boardMapper.registerFile(boardDto);

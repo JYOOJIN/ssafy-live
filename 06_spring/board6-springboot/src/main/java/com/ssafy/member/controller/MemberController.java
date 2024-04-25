@@ -2,8 +2,6 @@ package com.ssafy.member.controller;
 
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,14 +18,14 @@ import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 @RequestMapping("/user")
 public class MemberController {
 	
-	private final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	
-	private MemberService memberService;
+	private final MemberService memberService;
 
 	public MemberController(MemberService memberService) {
 		super();
@@ -44,14 +42,14 @@ public class MemberController {
 	@GetMapping("/{userid}")
 	@ResponseBody
 	public String idCheck(@PathVariable("userid") String userId) throws Exception {
-		logger.debug("idCheck userid : {}", userId);
+		log.debug("idCheck userid : {}", userId);
 		int cnt = memberService.idCheck(userId);
 		return cnt + "";
 	}
 	
 	@PostMapping("/join")
 	public String join(MemberDto memberDto, Model model) {
-		logger.debug("memberDto info : {}", memberDto);
+		log.debug("memberDto info : {}", memberDto);
 		try {
 			memberService.joinMember(memberDto);
 			return "redirect:/user/login";
@@ -69,8 +67,7 @@ public class MemberController {
 	
 	@PostMapping("/login")
 	public String login(@RequestParam Map<String, String> map, @RequestParam(name = "saveid", required = false) String saveid, Model model, HttpSession session, HttpServletResponse response) {
-		System.out.println("login gogogogo");
-		logger.debug("login map : {}", map);
+		log.debug("login map : {}", map);
 		try {
 			MemberDto memberDto = memberService.loginMember(map);
 			if(memberDto != null) {

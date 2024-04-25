@@ -3,7 +3,6 @@ package com.ssafy.member.model.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.member.model.MemberDto;
@@ -15,9 +14,8 @@ public class MemberServiceImpl implements MemberService {
 //	@Autowired
 //	private SqlSession sqlSession;
 	
-	private MemberMapper memberMapper;
+	private final MemberMapper memberMapper;
 
-	@Autowired
 	public MemberServiceImpl(MemberMapper memberMapper) {
 		super();
 		this.memberMapper = memberMapper;

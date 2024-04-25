@@ -25,7 +25,7 @@ spring.datasource.hikari.idle-timeout=600000
 
 # connection Pool에 의하여 확보된 connection의 최대 생명주기를 지정. 
 # connection을 얻어낸지, 이 시간이상되면 최근에 사용하고 있던 connection일지라도, connection을 close시킴. 
-# 사용중에 있던 connection은 close 시키지 않음. (사용이 마쳐지면 바로 close 됩니다.) 
+# 사용중에 있던 connection은 close 시키지 않음. (사용이 끝나면 바로 close 됩니다.) 
 # HikariCP에서는 이 값을 30~60 minutes 사이의 값을 설정하라고 강력권고함. 값을 0로 설정하는 경우 lifetime은 무제한이 됩니다.
 # default : 1800000 - 30 minutes
 spring.datasource.hikari.max-lifetime=1800000

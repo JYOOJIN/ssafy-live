@@ -1,11 +1,23 @@
 package com.ssafy.admin.controller;
 
+/*
+ * ResponseEntity
+ * 1. status와 body
+ * 		ResponseEntity.status(status code).headers(header).body(response obj);
+ * 2. status code가 OK일 경우 body와 한번에 처리
+ * 		ResponseEntity.ok(response obj);
+ * 3. body가 없는 경우
+ * 		ResponseEntiry.status(status code).build();
+ * 4. body가 없을 경우 status 대신 사용하는 method
+ * 		ResponseEntity.noContent(); : 204
+ * 		ResponseEntity.badRequest(); : 400
+ * 		ResponseEntity.notFound(); : 404
+ */
+
 import java.nio.charset.StandardCharsets;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,6 +34,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ssafy.member.model.MemberDto;
 import com.ssafy.member.model.service.MemberService;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -32,29 +45,40 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/admin")
 @CrossOrigin("*")
+@Tag(name = "어드민 컨트롤러", description = "회원 목록과 상세보기, 등록, 수정, 삭제등 전반적인 회원 관리를 처리하는 클래스")
 public class AdminUserController {
 
-	private static final Logger logger = LoggerFactory.getLogger(AdminUserController.class);
-
-	private MemberService memberService;
+	private final MemberService memberService;
 
 	public AdminUserController(MemberService memberService) {
 		this.memberService = memberService;
 	}
 
+	@Operation(summary = "회원목록", description = "회원의 <big>전체 목록</big>을 반환해 줍니다.")
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "회원목록 OK!!"),
+			@ApiResponse(responseCode = "404", description = "페이지없어!!"),
+			@ApiResponse(responseCode = "500", description = "서버에러!!") })
 	@GetMapping(value = "/user")
 	public ResponseEntity<?> userList() {
-		logger.debug("userList call");
+		log.debug("userList call");
 		try {
 			List<MemberDto> list = memberService.listMember(null);
 			if (list != null && !list.isEmpty()) {
-				return new ResponseEntity<List<MemberDto>>(list, HttpStatus.OK);
+//				return new ResponseEntity<List<MemberDto>>(list, HttpStatus.OK);
+				HttpHeaders headers = new HttpHeaders();
+				headers.setContentType(new MediaType("application", "json", StandardCharsets.UTF_8));
+				return ResponseEntity.ok().headers(headers).body(list);
+//				return ResponseEntity.ok(list); // status code와 body를 한번에..
 			} else {
-				return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+//				return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+//				return ResponseEntity.noContent().build();
+				return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 			}
 		} catch (Exception e) {
 			return exceptionHandling(e);
@@ -62,10 +86,12 @@ public class AdminUserController {
 
 	}
 
+	@Hidden
+	@Operation(summary = "회원등록", description = "회원의 정보를 받아 데이터베이스에 등록.")
 	@PostMapping(value = "/user")
 	public ResponseEntity<?> userRegister(
-			 @org.springframework.web.bind.annotation.RequestBody MemberDto memberDto) {
-		logger.debug("userRegister memberDto : {}", memberDto);
+			@RequestBody(description = "등록할 회원정보.", required = true, content = @Content(schema = @Schema(implementation = MemberDto.class))) @org.springframework.web.bind.annotation.RequestBody MemberDto memberDto) {
+		log.debug("userRegister memberDto : {}", memberDto);
 		try {
 			memberService.joinMember(memberDto);
 			List<MemberDto> list = memberService.listMember(null);
@@ -92,7 +118,7 @@ public class AdminUserController {
 	@GetMapping(value = "/user/{userid}")
 	public ResponseEntity<?> userInfo(
 			@Parameter(required = true, description = "검색할 사용자의 아이디") @PathVariable("userid") String userId) {
-		logger.debug("userInfo userid : {}", userId);
+		log.debug("userInfo userid : {}", userId);
 		try {
 			MemberDto memberDto = memberService.getMember(userId);
 			if (memberDto != null) {
@@ -110,11 +136,12 @@ public class AdminUserController {
 		}
 	}
 
+	@Hidden
 	@Operation(summary = "회원정보수정", description = "회원정보를 수정.")
 	@PutMapping(value = "/user")
 	public ResponseEntity<?> userModify(
 			@RequestBody(description = "수정할 회원정보.", required = true, content = @Content(schema = @Schema(implementation = MemberDto.class))) @org.springframework.web.bind.annotation.RequestBody MemberDto memberDto) {
-		logger.debug("userModify memberDto : {}", memberDto);
+		log.debug("userModify memberDto : {}", memberDto);
 		try {
 			memberService.updateMember(memberDto);
 			List<MemberDto> list = memberService.listMember(null);
@@ -127,11 +154,12 @@ public class AdminUserController {
 		}
 	}
 
+	@Hidden
 	@Operation(summary = "회원정보삭제", description = "회원정보를 삭제.")
 	@DeleteMapping(value = "/user/{userid}")
 	public ResponseEntity<?> userDelete(
 			@Parameter(required = true, description = "삭제할 사용자의 아이디") @PathVariable("userid") String userId) {
-		logger.debug("userDelete userid : {}", userId);
+		log.debug("userDelete userid : {}", userId);
 		try {
 			memberService.deleteMember(userId);
 			List<MemberDto> list = memberService.listMember(null);
