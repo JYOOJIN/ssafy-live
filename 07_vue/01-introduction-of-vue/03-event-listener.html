@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuejs</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="increament">1 증가</button>
+      <p>count의 값: {{count}}</p>
+    </div>
+    <script>
+      const { createApp, ref } = Vue; //Vue 객체 안에 있는 creatApp을 가져오겠다
+      const app = createApp({
+        setup() {
+          const count = ref(0); //그냥 0하면 1 증가 불가능. 반응형으로 만들어야 한다.
+          const increament = function () {
+            //count는 객체이기 때문에 value, 즉 값을 사용해야한다
+            count.value++;
+          };
+          return {
+            //밖에서 쓰기 위해서는 return 필수
+            count,
+            increament,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

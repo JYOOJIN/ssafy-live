@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vuejs</title>
+    <!-- CDN 연결 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{message}}</h1>
+      <!-- js 문법 실행 가능 (표현식) -->
+      <h1>{{message.split('').reverse().join('')}}</h1>
+    </div>
+    <script>
+      const { createApp, ref } = Vue;
+      //const createApp = Vue.createApp();
+
+      const app = createApp({
+        //기본 세팅 함수
+        setup() {
+          //ref로 하면 웹의 devtool에서 수정 가능
+          //반응형 상태 선언하는 함수 ref()
+          const message = ref("hello vue!!");
+          console.log(message);
+          console.log(message.value);
+          return {
+            //반드시 반환해야한다
+            message,
+          };
+        },
+      });
+      app.mount("#app"); //div id="app"과 연결
+    </script>
+  </body>
+</html>
